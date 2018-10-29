@@ -1,0 +1,17 @@
+{
+  "name": "example-with-amp",
+  "version": "1.0.0",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "firebase": "^5.5.5",
+    "marked": "^0.5.1",
+    "nuxt-edge": "latest",
+    "vuefire": "^2.0.0-alpha.15"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  }
+}

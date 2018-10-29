@@ -1,0 +1,95 @@
+body {
+  font-family: Roboto, sans-serif;
+  color: #444;
+  direction: rtl;
+}
+h1 {
+  margin-bottom: 5px;
+}
+.caption {
+  color: #ccc;
+   margin-top: 0;
+   font-size: 14px;
+   text-align: center;
+}
+.byline {
+   color: #aaa;
+   margin-bottom: 25px;
+}
+.page-container {
+  padding: 50px 30px;
+}
+p {
+  font-size: 18px;
+   line-height: 30px;
+   margin-top: 30px;
+}
+.home-button {
+  margin-top: 8px;
+}
+.headerbar {
+  height: 60px;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #dfa3a3;
+}
+.site-name {
+  flex: 1;
+  margin: 10px;
+}
+
+.hamburger {
+  padding: 10px;
+  font-size: 1.6em;
+  font-weight: bold;
+}
+.sidebar {
+  padding: 10px;
+  margin: 0;
+  min-width: 300px;
+}
+.sidebar > li {
+  list-style: none;
+  margin-bottom:10px;
+}
+.sidebar a {
+  text-decoration: none;
+}
+
+.menu-item {
+  padding: 5px;
+  font-weight: bold;
+}
+
+.close-sidebar {
+  font-weight: bold;
+  font-size: 1.6em;
+  padding: 10px;
+  margin: 5px;
+  color: red;
+}
+
+.outer-image {
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+}
+
+amp-img {
+  background-color: #eee;
+}
+
+amp-img.contain img {
+  object-fit: contain;
+}
+
+.fixed-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+}
