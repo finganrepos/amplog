@@ -71,5 +71,30 @@ export default {
       */
     }
   },
-  modules: []
+  modules: ['@nuxtjs/sitemap'],
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://wholesaleplaces.firebaseapp.com',
+    cacheTime: 1000 * 60 * 15,
+    gzip: false,
+    generate: true, // Enable me when using nuxt generate
+    exclude: [
+      '/secret',
+      '/admin/**'
+    ],
+    routes: function () {
+      return firebase.firestore().collection('blogposts').get()
+      .then((snapShot) =>{
+        console.log(snapShot)
+        var all_routes = []
+          snapShot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            // console.log(doc.id, " => ", doc.data());
+            // var post = doc.data()
+            all_routes.push('/post/'+ doc.id);
+          });
+          return all_routes
+      })
+	}
+  }
 }
