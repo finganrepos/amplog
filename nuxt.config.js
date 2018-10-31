@@ -51,7 +51,6 @@ export default {
     routes: function () {
       return firebase.firestore().collection('blogposts').get()
       .then((snapShot) =>{
-        console.log(snapShot)
         var all_routes = []
           snapShot.forEach(function(doc) {
             // doc.data() is never undefined for query doc snapshots
@@ -85,7 +84,6 @@ export default {
     routes: function () {
       return firebase.firestore().collection('blogposts').get()
       .then((snapShot) =>{
-        console.log(snapShot)
         var all_routes = []
           snapShot.forEach(function(doc) {
             // doc.data() is never undefined for query doc snapshots
