@@ -24,6 +24,20 @@
       </li>
     </ul>
     </amp-sidebar>
+    
     {{ APP }}
+
+    <amp-analytics type="gtag" data-credentials="include">
+    <script type="application/json">
+    {
+      "vars" : {
+        "gtag_id": "UA-128378374-1",
+        "config" : {
+          "UA-128378374-1": { "groups": "default" }
+        }
+      }
+    }
+    </script>
+    </amp-analytics>
   </body>
 </html>
