@@ -3,10 +3,15 @@ import firebase from './firebase'
 const modifyHtml = (html) => {
   // Add amp-custom tag to added CSS
   html = html.replace(/<style data-vue-ssr/g, '<style amp-custom data-vue-ssr')
-  // Remove every script tag from generated HTML
-  html = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+  // Remove every script tag from generated HTML // Except for json 
+  html = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, (str) => {
+    if (/application\/json/.test(str)) {
+      return str;
+    }
+    return '';
+  })
   // Add AMP script before </head>
-  const ampScript = '<script async src="https://cdn.ampproject.org/v0.js"></script><script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>'
+  const ampScript = '<script async src="https://cdn.ampproject.org/v0.js"></script><script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script><script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>'
   html = html.replace('</head>', ampScript + '</head>')
   return html
 }

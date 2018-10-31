@@ -18,7 +18,7 @@
 
 ## Development Notes
 
-- ""@click" not working because no scripts running now 
+- "@click" not working because no scripts running now 
 
 ---
 
