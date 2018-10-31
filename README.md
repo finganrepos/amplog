@@ -21,6 +21,8 @@
 ---
 ## SEO Preparations
 
-- Add sitemap !
-
+- Support [Sitemap](https://github.com/nuxt-community/sitemap-module)
+- Support Cover Pic
+- Support description
+- Support Categories <!>
 ---
