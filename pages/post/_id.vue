@@ -15,7 +15,7 @@ export default {
         return {
             title: this.post.title,
             link: [
-            { rel: 'canonical', href: '/arab' }
+            { rel: 'canonical', href: '/post/'+this.post.slug }
             ]
         }
     },
