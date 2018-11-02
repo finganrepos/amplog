@@ -3,13 +3,20 @@
     <amp-img :alt="post.title" :src="post.cover"  height="200" layout="fixed-height"></amp-img>
     <h1>{{ post.title }}</h1>
     <div v-html="$options.filters.amp_it(post.text)"></div>
+    <template v-html="post.state"></template>
   </div>
 </template>
 
 <script>
 export default {
     data () {
-        return {}
+        return {
+            structuredData: {
+                "@context": "http://schema.org",
+                "@type": "Hotel",
+                // more ...
+            }
+        }
     },
     head () { // Make it a function to access asyncData
         return {
@@ -18,7 +25,7 @@ export default {
               { rel: 'canonical', href: '/post/'+this.post.slug }
             ],
             script: [
-              { innerHTML: '{ "@context": "http://schema.org" }', type: 'application/ld+json' }
+              { innerHTML: JSON.stringify(this.structuredData), type: 'application/ld+json' }
             ],
             __dangerouslyDisableSanitizers: ['script']
         }
