@@ -15,8 +15,12 @@ export default {
         return {
             title: this.post.title,
             link: [
-            { rel: 'canonical', href: '/post/'+this.post.slug }
-            ]
+              { rel: 'canonical', href: '/post/'+this.post.slug }
+            ],
+            script: [
+              { innerHTML: '{ "@context": "http://schema.org" }', type: 'application/ld+json' }
+            ],
+            __dangerouslyDisableSanitizers: ['script']
         }
     },
     async asyncData (context) {

@@ -11,4 +11,7 @@ npm-debug.log
 dist
 
 # Firebases
-.firebase
+.firebase/
+
+# Generated Sitemap
+static/sitemap.xml
