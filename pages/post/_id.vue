@@ -10,22 +10,44 @@
 <script>
 export default {
     data () {
-        return {
-            structuredData: {
-                "@context": "http://schema.org",
-                "@type": "Hotel",
-                // more ...
-            }
-        }
+        return {}
     },
     head () { // Make it a function to access asyncData
+        const structuredData = {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "headline": this.post.title,
+            "image": {
+                "@type": "ImageObject",
+                "url": this.post.cover, // Todo Dynamic get width and height
+                "width": 600,
+                "height": 300
+            },
+            "datePublished": "2018-11-01", // Todo Dynamic
+            // Todo from config
+            "author": {
+                "@type": "Person",
+                "name": "Abdelmomen Bauomy"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "wholesaleplaces.online",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https://wholesaleplaces.online/logo.png",
+                "width": 105,
+                "height": 59
+                }
+            }
+        }
+        // To Test structured-data https://search.google.com/structured-data/testing-tool
         return {
             title: this.post.title,
             link: [
               { rel: 'canonical', href: '/post/'+this.post.slug }
             ],
             script: [
-              { innerHTML: JSON.stringify(this.structuredData), type: 'application/ld+json' }
+              { innerHTML: JSON.stringify(structuredData), type: 'application/ld+json' }
             ],
             __dangerouslyDisableSanitizers: ['script']
         }
