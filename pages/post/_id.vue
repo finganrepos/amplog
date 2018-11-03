@@ -43,8 +43,15 @@ export default {
         // To Test structured-data https://search.google.com/structured-data/testing-tool
         return {
             title: this.post.title,
+            meta: [
+              { name: 'description', content: this.post.description },
+              { name: 'og:title', content: this.post.title },
+              { name: 'og:type', content: 'article' },
+              { name: 'og:url', content: 'https://wholesaleplaces.online/post/' + this.post.slug },
+              { name: 'og:image', content: this.post.cover },
+            ],
             link: [
-              { rel: 'canonical', href: '/post/'+this.post.slug }
+              { rel: 'canonical', href: '/post/' + this.post.slug }
             ],
             script: [
               { innerHTML: JSON.stringify(structuredData), type: 'application/ld+json' }
