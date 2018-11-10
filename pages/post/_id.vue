@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container">
+  <article class="page-container">
     <amp-img :alt="post.title" :src="post.cover"  height="200" layout="fixed-height"></amp-img>
     <h1>{{ post.title }}</h1>
     <div v-html="$options.filters.amp_it(post.text)"></div>
@@ -15,7 +15,11 @@
             <figcaption>{{photo.title}} </figcaption>
         </figure>
     </div>
-  </div>
+    <br/>
+    <div>
+        <b> تم النشر في {{post.dateCreated.toDate() | arab_date}} </b>
+    </div>
+  </article>
 </template>
 
 <script>
@@ -34,7 +38,8 @@ export default {
                 "width": 600,
                 "height": 300
             },
-            "datePublished": "2018-11-01", // Todo Dynamic
+            "datePublished": this.post.dateCreated.toDate(), // Todo Dynamic
+            "dateModified": this.post.dateCreated.toDate(),
             // Todo from config
             "author": {
                 "@type": "Person",

@@ -6,14 +6,15 @@
     <p>{{$store.state.todo}} <span class="fas fa-arrow-alt-circle-down fa-2x"></span> </p>
     <div v-html="$options.filters.amp_it(post.text)"></div>
     -->
-    <div v-for='(post) in posts' :key='post.id'>
+    <article v-for='(post) in posts' :key='post.id' class="home-article">
       <nuxt-link :to="'/post/'+post.slug">
       <amp-img :alt="post.title" :src="post.cover" width="600" height="250" layout="responsive"></amp-img>
       <h2>
         {{ post.title }}
       </h2>
       </nuxt-link>
-    </div>
+      <p> {{post.description}} </p>
+    </article>
   </div>
 </template>
 
@@ -49,7 +50,7 @@ export default {
   },
   async asyncData (context) {
     const db = context.app.db
-    var docRef = db.collection('blogposts') // context.params.id
+    var docRef = db.collection('blogposts').orderBy('dateCreated', 'desc') // context.params.id
     return new Promise((resolve, reject) => {
         docRef.get().then(function(snapShot) {
           var all_posts = []

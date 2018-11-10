@@ -3,26 +3,32 @@ body {
   color: #444;
   direction: rtl;
 }
-h1 {
-  margin-bottom: 5px;
+a.site-name {
+  text-decoration: none !important;
+  flex: 1;
+  margin: 10px;
 }
 .caption {
   color: #ccc;
-   margin-top: 0;
-   font-size: 14px;
-   text-align: center;
+  margin-top: 0;
+  font-size: 14px;
+  text-align: center;
 }
 .byline {
-   color: #aaa;
-   margin-bottom: 25px;
+  color: #aaa;
+  margin-bottom: 25px;
 }
 .page-container {
-  padding: 60px 30px;
+  padding: 60px 20px;
 }
 p {
   font-size: 18px;
-   line-height: 30px;
-   margin-top: 30px;
+}
+.home-article {
+  border: solid 1px #bcc;
+  padding: 10px;
+  margin: 15px auto;
+  border-radius: 3px;
 }
 .home-button {
   margin-top: 8px;
@@ -37,11 +43,6 @@ p {
   align-items: center;
   background-color: #dfa3a3;
 }
-.site-name {
-  flex: 1;
-  margin: 10px;
-}
-
 .hamburger {
   padding: 10px;
   font-size: 1.6em;

@@ -19,6 +19,15 @@ Vue.filter('amp_it' , (content)=> {
     return content
 })
 
+Vue.filter('arab_date' , (seconds) => {
+    var date = new Date(seconds)
+    var months = ["يناير", "فبراير", "مارس", "إبريل", "مايو", "يونيو",
+              "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"];
+
+    var days =["اﻷحد","اﻷثنين","الثلاثاء","اﻷربعاء","الخميس","الجمعة","السبت"];
+    return days[date.getDay()] + ' ' + date.getDate() + ' ' + months[date.getMonth()]
+    + date.getFullYear() ;
+})
 
 if (!Vue.prototype.$firestore) {
     Vue.prototype.$firestore = firebase.firestore()
