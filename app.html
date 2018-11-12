@@ -9,10 +9,6 @@
     <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   </head>
   <body {{ BODY_ATTRS }}>
-    <header class="headerbar">
-      <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
-      <a href="/" class="site-name"><h1 >اماكن بيع الجملة</h1></a>
-    </header>
     <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
     <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
     <ul class="sidebar">
@@ -21,20 +17,6 @@
       </li>
     </ul>
     </amp-sidebar>
-    
     {{ APP }}
-
-    <amp-analytics type="gtag" data-credentials="include">
-    <script type="application/json">
-    {
-      "vars" : {
-        "gtag_id": "UA-128378374-1",
-        "config" : {
-          "UA-128378374-1": { "groups": "default" }
-        }
-      }
-    }
-    </script>
-    </amp-analytics>
   </body>
 </html>

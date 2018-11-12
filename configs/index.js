@@ -1,7 +1,8 @@
 const appConfigs = {
     multi: true,
     default_lang: 'ar',
-    name: 'مرحباً',
+    analyticsID: 'UA-128378374-1',
+    title: 'اماكن بيع الجملة في مصر',
     menu: [{label: 'الرئيسية', to: '/'},{ label: 'عربي', to:'/arab'}]
   }
   

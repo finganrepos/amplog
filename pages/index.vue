@@ -21,6 +21,8 @@
 <script>
 import Byline from '../components/Byline'
 import Vue from 'vue'
+import { appConfigs } from '../configs'
+
 const firedb = Vue.prototype.$firestore
 
 const axios = require('axios')
@@ -28,11 +30,10 @@ const axios = require('axios')
 export default {
   data() {
     return {
-      name: 'بالعربي'
     }
   },
   head: {
-    title: 'بالعربي',
+    title: appConfigs.title,
     link: [
       { rel: 'canonical', href: '/arab' }
     ]
