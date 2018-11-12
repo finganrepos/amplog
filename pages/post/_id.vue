@@ -8,12 +8,14 @@
     -->
     <div>
         <h3>صور {{post.title}}</h3>
-        <figure class="outer-image" v-for="(photo, index) in post.photos" :key='index'>
-            <div class="fixed-container">
-                <amp-img layout="fill" class="contain" :src="photo.path"></amp-img>
-            </div>
-            <figcaption>{{photo.title}} </figcaption>
-        </figure>
+        <template class="outer-image" v-for="(photo, index) in post.photos" >
+            <figure :key='index' v-if="photo.type == 'footer'">
+                <div class="fixed-container">
+                    <amp-img layout="fill" class="contain" :src="photo.path"></amp-img>
+                </div>
+                <figcaption>{{photo.title}} </figcaption>
+            </figure>
+        </template>
     </div>
     <br/>
     <div>
