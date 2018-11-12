@@ -9,7 +9,7 @@
     <div>
         <h3>صور {{post.title}}</h3>
         <template class="outer-image" v-for="(photo, index) in post.photos" >
-            <figure :key='index' v-if="photo.type == 'footer'">
+            <figure class="outer-image" :key='index' v-if="photo.type == 'footer'">
                 <div class="fixed-container">
                     <amp-img layout="fill" class="contain" :src="photo.path"></amp-img>
                 </div>
