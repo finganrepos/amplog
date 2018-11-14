@@ -54,7 +54,7 @@ export default {
                 "name": "wholesaleplaces.online",
                 "logo": {
                 "@type": "ImageObject",
-                "url": "https://wholesaleplaces.online/logo.png",
+                "url": appConfigs.site_url+"logo.png",
                 "width": 105,
                 "height": 59
                 }
@@ -67,7 +67,7 @@ export default {
               { name: 'description', content: this.post.description },
               { name: 'og:title', content: this.post.title },
               { name: 'og:type', content: 'article' },
-              { name: 'og:url', content: 'https://wholesaleplaces.online/post/' + this.post.slug },
+              { name: 'og:url', content: 'https://wholesaleplaces.online/post/' + this.post.slug +'/'},
               { name: 'og:image', content: this.post.cover },
             ],
             link: [
