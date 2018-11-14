@@ -65,7 +65,7 @@ export default {
             // doc.data() is never undefined for query doc snapshots
             // console.log(doc.id, " => ", doc.data());
             // var post = doc.data()
-            all_routes.push('/post/'+ doc.data().slug);
+            all_routes.push('/post/'+ doc.data().slug + '/');
           });
           return all_routes
       })
@@ -98,7 +98,7 @@ export default {
             // doc.data() is never undefined for query doc snapshots
             // console.log(doc.id, " => ", doc.data());
             // var post = doc.data()
-            all_routes.push('/post/'+ doc.data().slug);
+            all_routes.push('/post/'+ doc.data().slug + '/');
           });
           return all_routes
       })

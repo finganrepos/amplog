@@ -2,6 +2,7 @@ const appConfigs = {
     multi: true,
     default_lang: 'ar',
     analyticsID: 'UA-128378374-1',
+    site_url: 'https://wholesaleplaces.online/',
     title: 'اماكن بيع الجملة في مصر',
     menu: [{label: 'الرئيسية', to: '/'},{ label: 'عربي', to:'/arab'}]
   }

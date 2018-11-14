@@ -25,6 +25,8 @@
 </template>
 
 <script>
+import { appConfigs } from '~/configs'
+
 export default {
     data () {
         return {}
@@ -69,7 +71,7 @@ export default {
               { name: 'og:image', content: this.post.cover },
             ],
             link: [
-              { rel: 'canonical', href: '/post/' + this.post.slug }
+              { rel: 'canonical', href: appConfigs.site_url +'post' + '/' + this.post.slug }
             ],
             script: [
               { innerHTML: JSON.stringify(structuredData), type: 'application/ld+json' }
