@@ -18,6 +18,15 @@
         </template>
     </div>
     <br/>
+    <div v-if="post.video">
+        <amp-video controls width="640" height="360" layout="responsive">
+            <source :src="post.video" type="video/mp4" />
+            <div fallback>
+                <p>This browser does not support the video element.</p>
+            </div>
+        </amp-video>
+    </div>
+    <br/>
     <div>
         <b> تم النشر في {{post.dateCreated.toDate() | arab_date}} </b>
     </div>
