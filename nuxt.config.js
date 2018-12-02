@@ -83,7 +83,7 @@ export default {
   modules: ['@nuxtjs/sitemap'],
   sitemap: {
     path: '/sitemap.xml',
-    hostname: 'https://wholesaleplaces.firebaseapp.com',
+    hostname: 'https://wholesaleplaces.online',
     cacheTime: 1000 * 60 * 15,
     gzip: false,
     generate: true, // Enable me when using nuxt generate
