@@ -1,11 +1,5 @@
 <template>
   <div class="page-container">
-    <!-- 
-    <p>Go to <a href="/">الرئيسية</a>.</p>
-    <amp-img src="/dog.jpg" width="470" height="350" layout="responsive" alt="Woof" />
-    <p>{{$store.state.todo}} <span class="fas fa-arrow-alt-circle-down fa-2x"></span> </p>
-    <div v-html="$options.filters.amp_it(post.text)"></div>
-    -->
     <article v-for='(post) in posts' :key='post.id' class="home-article">
       <nuxt-link :to="'/post/'+post.slug">
       <amp-img :alt="post.title" :src="post.cover" width="600" height="250" layout="responsive"></amp-img>

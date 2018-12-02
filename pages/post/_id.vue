@@ -3,9 +3,6 @@
     <amp-img :alt="post.title" :src="post.cover"  height="200" layout="fixed-height"></amp-img>
     <h1>{{ post.title }}</h1>
     <div v-html="$options.filters.amp_it(post.text)"></div>
-    <!--
-    <template v-html="post.state"></template>
-    -->
     <div>
         <h3>صور {{post.title}}</h3>
         <template class="outer-image" v-for="(photo, index) in post.photos" >
