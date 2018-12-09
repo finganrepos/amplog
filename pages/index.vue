@@ -1,11 +1,9 @@
 <template>
   <div class="page-container">
     <article v-for='(post) in posts' :key='post.id' class="home-article">
-      <nuxt-link :to="'/post/'+post.slug">
+      <nuxt-link :to="'/post/'+post.slug+'/'">
       <amp-img :alt="post.title" :src="post.cover" width="600" height="250" layout="responsive"></amp-img>
-      <h2>
-        {{ post.title }}
-      </h2>
+      <h2>{{ post.title }}</h2>
       </nuxt-link>
       <p> {{post.description}} </p>
     </article>
