@@ -7,12 +7,12 @@
       "**/node_modules/**"
     ],
     "redirects": [ {
-      "source": "/اهم_اماكن_بيع_الملابس_في_مصر/",  
+      "source": "/post/اهم_اماكن_بيع_الملابس_في_مصر/",  
       "destination": "https://wholesaleplaces.online/post/اهم_اماكن_بيع_الملابس_بالجملة_في_مصر/",
       "type": 301
     },
     {
-      "source": "/اهم_اماكن_بيع_الملابس_في_مصر",  
+      "source": "/post/اهم_اماكن_بيع_الملابس_في_مصر",  
       "destination": "https://wholesaleplaces.online/post/اهم_اماكن_بيع_الملابس_بالجملة_في_مصر/",
       "type": 301
     } ]
