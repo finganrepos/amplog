@@ -3,6 +3,10 @@
     <amp-img :alt="post.title" :src="post.cover"  height="200" layout="fixed-height"></amp-img>
     <h1>{{ post.title }}</h1>
     <div v-html="$options.filters.amp_it(post.text)"></div>
+
+    <p v-if="post.innerPost">{{post.innerPost.description}} في 
+        <nuxt-link :to="'/post/'+post.innerPost.slug+'/'">{{post.innerPost.title}}</nuxt-link>
+    </p>
     <div>
         <h3>صور {{post.title}}</h3>
         <template class="outer-image" v-for="(photo, index) in post.photos" >
@@ -68,7 +72,7 @@ export default {
         }
         // To Test structured-data https://search.google.com/structured-data/testing-tool
         return {
-            title: this.post.title,
+            title: appConfigs.title+ ' - '+ this.post.title,
             meta: [
               { name: 'description', content: this.post.description },
               { name: 'og:title', content: this.post.title },
@@ -77,7 +81,7 @@ export default {
               { name: 'og:image', content: this.post.cover },
             ],
             link: [
-              { rel: 'canonical', href: appConfigs.site_url +'post' + '/' + this.post.slug }
+              { rel: 'canonical', href: appConfigs.site_url +'post' + '/' + this.post.slug +'/'}
             ],
             script: [
               { innerHTML: JSON.stringify(structuredData), type: 'application/ld+json' }
@@ -89,7 +93,6 @@ export default {
     const db = context.app.db
     var docRef = db.collection('blogposts').where('slug','==',context.params.id)
     return new Promise((resolve, reject) => {
-
         docRef.get().then(function(snapShot) {
           if(snapShot.docs[0])
             resolve({post: snapShot.docs[0].data()})
