@@ -2,8 +2,7 @@
   <article class="page-container">
     <amp-img :alt="post.title" :src="post.cover"  height="200" layout="fixed-height"></amp-img>
     <h1>{{ post.title }}</h1>
-    <div v-html="$options.filters.amp_it(post.text)"></div>
-
+    <p v-html="$options.filters.amp_it(post.text)"></p>
     <p v-if="post.innerPost">{{post.innerPost.description}} في 
         <nuxt-link :to="'/post/'+post.innerPost.slug+'/'">{{post.innerPost.title}}</nuxt-link>
     </p>
@@ -72,7 +71,7 @@ export default {
         }
         // To Test structured-data https://search.google.com/structured-data/testing-tool
         return {
-            title: appConfigs.title+ ' - '+ this.post.title,
+            title: this.post.title,
             meta: [
               { name: 'description', content: this.post.description },
               { name: 'og:title', content: this.post.title },
