@@ -3,6 +3,7 @@
 <header class="headerbar">
     <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
     <a href="/" class="site-name"><h1>{{appConfigs.title}}</h1></a>
+	
 </header>
 <nuxt/>
 <amp-analytics type="gtag" data-credentials="include" v-if="appConfigs.analyticsID">
